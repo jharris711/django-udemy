@@ -13,7 +13,7 @@ git clone https://github.com/jharris711/django-udemy.git
 _*Install the requirements*_
 
 ```bash
-pip freeze -r requirements.txt
+pip install -r requirements.txt
 ```
 
 _*Run the server*_
