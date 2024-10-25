@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import Profile
 import uuid
 
 
@@ -12,6 +13,7 @@ class Project(models.Model):
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL)
     # Override the default id/primary key field
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
