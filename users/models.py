@@ -21,7 +21,7 @@ class Profile(models.Model):
     id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
 
     def __str__(self):
-        return str(self.user.username)
+        return str(self.username)
 
 
 class Skill(models.Model):
