@@ -2,6 +2,10 @@
   --color-sub: #2d2d39;
 }
 
+.dev__social li a svg {
+  fill: currentColor; /* This preserves the original icon color */
+}
+
 .btn--sub {
   background-color: var(--color-sub-light);
 }
@@ -124,26 +128,17 @@ img {
     transform-origin: 0 0;
   }
 
-  .header__nav
-    input[type='checkbox']:checked
-    + .toggle-menu
-    > .toggle-menu__lines::before {
+  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::before {
     margin-left: 3px;
     transform: rotate(45deg) scaleX(1.2) translateX(-2px) translateY(-4px);
     visibility: visible;
   }
 
-  .header__nav
-    input[type='checkbox']:checked
-    + .toggle-menu
-    > .toggle-menu__lines {
+  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines {
     visibility: hidden;
   }
 
-  .header__nav
-    input[type='checkbox']:checked
-    + .toggle-menu
-    > .toggle-menu__lines::after {
+  .header__nav input[type='checkbox']:checked + .toggle-menu > .toggle-menu__lines::after {
     transform: rotate(-45deg) scaleX(1.2) translateX(-2px) translateY(3px);
     visibility: visible;
   }
