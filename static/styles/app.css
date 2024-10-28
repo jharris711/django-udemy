@@ -2,10 +2,6 @@
   --color-sub: #2d2d39;
 }
 
-.dev__social li a svg {
-  fill: currentColor; /* This preserves the original icon color */
-}
-
 .btn--sub {
   background-color: var(--color-sub-light);
 }
@@ -847,4 +843,17 @@ img {
   color: var(--color-sub);
   margin-bottom: 1rem;
   margin-top: 2rem;
+}
+
+/*=======================
+  Fixed Position Alerts Wrapper
+========================*/
+
+.alert {
+  position: fixed;
+  left: 50%;
+  top: 120px;
+  transform: translate(-50%, -50%);
+
+  z-index: 99999;
 }
