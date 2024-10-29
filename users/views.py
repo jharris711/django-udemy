@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 from users.models import Profile
-from users.forms import CustomUserCreationForm
+from users.forms import CustomUserCreationForm, ProfileForm
 
 
 def loginUser(request):
@@ -61,7 +61,7 @@ def registerUser(request):
 
             login(request, user)
 
-            return redirect('profiles')
+            return redirect('edit-account')
         else:
             messages.error(request, "An error occurred during registration")
 
@@ -112,3 +112,21 @@ def userAccount(request):
     }
     
     return render(request, 'users/account.html', context)
+
+
+@login_required(login_url='login')
+def editAccount(request):
+    form = ProfileForm(instance=request.user.profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('account')
+
+    context = {
+        'form': form,
+    }
+    
+    return render(request, 'users/profile_form.html', context)

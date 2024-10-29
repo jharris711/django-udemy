@@ -5,7 +5,8 @@ from users.views import (
   loginUser,
   logoutUser,
   registerUser,
-  userAccount
+  userAccount,
+  editAccount
 )
 
 
@@ -17,4 +18,5 @@ urlpatterns = [
   path('', profiles, name="profiles"),
   path('profile/<str:pk>', userProfile, name="user-profile"),
   path('account/', userAccount, name="account"),
+  path('edit-account/', editAccount, name="edit-account"),
 ] 

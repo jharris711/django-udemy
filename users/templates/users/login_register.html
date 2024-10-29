@@ -31,11 +31,11 @@
       <div class="auth__actions">
         <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
       </div>
+      <div class="auth__alternative">
+        <p>Already have an Account?</p>
+        <a href="{% url 'login' %}">Log In</a>
+      </div>
     </form>
-    <div class="auth__alternative">
-      <p>Already have an Account?</p>
-      <a href="{% url 'login' %}">Log In</a>
-    </div>
   </div>
 </div>
 
@@ -80,11 +80,11 @@
         <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
         <a href="forgetpassword.html">Forget Password?</a>
       </div>
+      <div class="auth__alternative">
+        <p>Don't have an Account?</p>
+        <a href="{% url 'register' %}">Sign Up</a>
+      </div>
     </form>
-    <div class="auth__alternative">
-      <p>Don't have an Account?</p>
-      <a href="{% url 'register' %}">Sign Up</a>
-    </div>
   </div>
 </div>
 
