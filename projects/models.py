@@ -1,5 +1,7 @@
 from django.db import models
+
 from users.models import Profile
+
 import uuid
 
 
@@ -20,6 +22,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        ordering = ['created']
 
 
 class Review(models.Model):
