@@ -9,7 +9,10 @@ from users.views import (
   editAccount,
   createSkill,
   updateSkill,
-  deleteSkill
+  deleteSkill,
+  inbox,
+  viewMessage,
+  createMessage,
 )
 
 
@@ -19,11 +22,15 @@ urlpatterns = [
   path('register/', registerUser, name="register"),
 
   path('', profiles, name="profiles"),
-  path('profile/<str:pk>', userProfile, name="user-profile"),
+  path('profile/<str:pk>/', userProfile, name="user-profile"),
   path('account/', userAccount, name="account"),
   path('edit-account/', editAccount, name="edit-account"),
 
   path('create-skill/', createSkill, name="create-skill"),
-  path('update-skill/<str:pk>', updateSkill, name="update-skill"),
-  path('delete-skill/<str:pk>', deleteSkill, name="delete-skill"),
+  path('update-skill/<str:pk>/', updateSkill, name="update-skill"),
+  path('delete-skill/<str:pk>/', deleteSkill, name="delete-skill"),
+
+  path('inbox/', inbox, name="inbox"),
+  path('message/<str:pk>/', viewMessage, name="message"),
+  path('send-message/<str:pk>/', createMessage, name="create-message"),
 ] 
